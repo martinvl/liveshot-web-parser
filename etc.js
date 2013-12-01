@@ -1,5 +1,4 @@
 var path = require('path');
-var iconv = require('iconv-lite');
 var decodeWord = require('bite').decodeWord;
 
 // --- Constants ---
