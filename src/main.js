@@ -28,6 +28,8 @@ transport.on('disconnect', function (err) {
     console.info('disconnected from server');
 });
 
+var numUpdates = 0;
+
 selector.addEventListener('change', function () {
     var parser = new Parser(selector.files);
 
@@ -38,7 +40,6 @@ selector.addEventListener('change', function () {
     sync.setObject(parser.ranges);
 
     parser.on('update', function () {
-        console.log('update');
         var ranges = parser.ranges;
 
         for (var idx in parser.ranges) {
@@ -46,6 +47,7 @@ selector.addEventListener('change', function () {
         }
 
         sync.setObject(ranges);
+        console.log('sent update ' + (++numUpdates));
     });
     parser.start();
 
