@@ -1,7 +1,7 @@
 {
-    "name":"liveshot-parser",
+    "name":"liveshot-web-parser",
     "version":"0.1.0b-1",
-    "main":"Parser.js",
+    "main":"main.js",
     "dependencies":{
         "bite":">=0.1",
         "inherits":">=2.0",
