@@ -2,3 +2,5 @@ node_modules
 main.js
 test/Live
 test_data
+todo
+*.DS_Store
