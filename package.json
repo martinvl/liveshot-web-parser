@@ -4,10 +4,9 @@
     "main":"Parser.js",
     "dependencies":{
         "bite":">=0.1",
-        "fs-watcher":">=0.2",
-        "iconv-lite":">=0.2",
+        "inherits":">=2.0",
+        "liveshot-protocol":">=0.1",
         "objsync":">=0.1",
-        "socket.io-client":">=0.9",
-        "liveshot-protocol":">=0.1"
+        "socket.io-client":">=0.9"
     }
 }
