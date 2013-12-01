@@ -1,0 +1,67 @@
+var Watcher = require('../Watcher');
+var Parser = require('../Parser');
+
+var selector = document.createElement('input');
+selector.type = 'file';
+selector.multiple = true;
+
+var modified = 0;
+
+selector.addEventListener('change', function () {
+    var p = new Parser(selector.files);
+
+    p.on('update', function () {
+        console.log('update');
+    });
+    /*
+    var files = selector.files;
+
+    for (var i = 0; i < files.length; ++i) {
+        var file = files[i];
+
+        console.log(file.name);
+    }
+    */
+
+    //setup(selector.files[0]);
+
+    /*
+    var f = files[0];
+
+    console.log(f.name + ' ' + f.type + ' ' + f.size + ' ' + f.lastModifiedDate);
+
+    setInterval(function () {
+        if (f.lastModifiedDate.valueOf() > modified) {
+            modified = f.lastModifiedDate.valueOf();
+
+            console.log('File changed');
+        }
+    }, 100);
+
+       reader.onloadend = function (e) {
+       var buffer = new Buffer(new Uint8Array(e.target.result));
+
+       var s = '';
+       for (var i = 0; i < buffer.length; ++i) {
+       s += buffer.readUInt8(i) + ' ';
+       }
+
+       console.log(s);
+       console.log(buffer.length);
+       };
+
+       reader.readAsArrayBuffer(f);
+       */
+}, false);
+document.body.appendChild(selector);
+
+function setup(file) {
+    var watcher = new Watcher(file);
+    //var reader = new FileReader();
+
+    var numChanges = 0;
+    watcher.on('update', function () {
+        console.log('File change ' + (++numChanges));
+    });
+    watcher.start();
+}

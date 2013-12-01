@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                margin: 0px;
+            }
+        </style>
+        <script>
+            function init() {
+                var handle = document.createElement('script');
+
+                handle.type = 'text/javascript';
+                handle.src = 'main.js';
+
+                document.body.appendChild(handle);
+            }
+        </script>
+    </head>
+    <body onload="init()">
+    </body>
+</html>

@@ -1,0 +1,13 @@
+{
+    "name":"liveshot-parser",
+    "version":"0.1.0b-1",
+    "main":"Parser.js",
+    "dependencies":{
+        "bite":">=0.1",
+        "fs-watcher":">=0.2",
+        "iconv-lite":">=0.2",
+        "objsync":">=0.1",
+        "socket.io-client":">=0.9",
+        "liveshot-protocol":">=0.1"
+    }
+}
